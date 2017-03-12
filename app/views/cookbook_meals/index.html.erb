@@ -17,7 +17,7 @@
       <% @cookbook_meals.each do |cookbook_meal| %>
       <tr>
         <td><%= cookbook_meal.cookbook.name %></td>
-        <td><%= cookbook_meal.meal_id %></td>
+        <td><%= cookbook_meal.meal.name %></td>
         <td>
           <a href="/cookbook_meals/<%= cookbook_meal.id %>" class="btn btn-primary">Show</a>
           <a href="/cookbook_meals/<%= cookbook_meal.id %>/edit" class="btn btn-warning">Edit</a>
