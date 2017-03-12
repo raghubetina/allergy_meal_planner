@@ -10,7 +10,7 @@ class UserSensitiviesController < ApplicationController
   end
 
   def index
-    @user_sensitivies = UserSensitivy.all
+    @user_sensitivies = current_user.user_sensitivies.page(params[:page]).per(10)
 
     render("user_sensitivies/index.html.erb")
   end
