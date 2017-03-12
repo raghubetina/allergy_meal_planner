@@ -47,8 +47,6 @@ class UserSensitiviesController < ApplicationController
 
   def update
     @user_sensitivy = UserSensitivy.find(params[:id])
-
-    @user_sensitivy.user_id = params[:user_id]
     @user_sensitivy.sensitivity_id = params[:sensitivity_id]
 
     save_status = @user_sensitivy.save
