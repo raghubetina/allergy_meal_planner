@@ -9,6 +9,10 @@ class Recipe < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :ingredients,
+             :through => :recipe_ingredients,
+             :source => :ingredient
+
   has_many   :meals,
              :through => :meal_recipes,
              :source => :meal
