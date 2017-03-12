@@ -1,6 +1,10 @@
 class UserSensitivy < ApplicationRecord
   # Direct associations
 
+  has_many   :cookbooks,
+             :foreign_key => "user_id",
+             :dependent => :destroy
+
   belongs_to :user,
              :counter_cache => true
 
