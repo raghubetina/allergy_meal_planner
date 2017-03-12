@@ -6,6 +6,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :sensitivities,
+             :through => :user_sensitivies,
+             :source => :sensitivity
+
   # Validations
 
   # Include default devise modules. Others available are:

@@ -11,6 +11,10 @@ class Sensitivy < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :user_sensitivies,
+             :source => :user
+
   has_many   :ingredients,
              :through => :ingredient_sensitivities,
              :source => :ingredient
