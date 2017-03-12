@@ -26,3 +26,34 @@
     </div>
   </div>
 </div>
+
+<!-- A User sensitivy has many cookbooks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cookbooks
+      </li>
+
+      <% @user_sensitivy.cookbooks.each do |cookbook| %>
+        <li class="list-group-item">
+          <a href="/cookbooks/<%= cookbook.id %>">
+            <%= cookbook.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cookbooks/<%= cookbook.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cookbooks/<%= cookbook.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_cookbook/<%= cookbook.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

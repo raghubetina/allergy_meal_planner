@@ -23,3 +23,127 @@
     </div>
   </div>
 </div>
+
+<!-- A Meal has many meal_recipes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Meal Recipes
+      </li>
+
+      <% @meal.meal_recipes.each do |meal_recipe| %>
+        <li class="list-group-item">
+          <a href="/meal_recipes/<%= meal_recipe.id %>">
+            <%= meal_recipe.meal_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/meal_recipes/<%= meal_recipe.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/meal_recipes/<%= meal_recipe.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_meal_recipe/<%= meal_recipe.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Meal has many cookbook_meals -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cookbook Meals
+      </li>
+
+      <% @meal.cookbook_meals.each do |cookbook_meal| %>
+        <li class="list-group-item">
+          <a href="/cookbook_meals/<%= cookbook_meal.id %>">
+            <%= cookbook_meal.cookbook_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cookbook_meals/<%= cookbook_meal.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cookbook_meals/<%= cookbook_meal.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_cookbook_meal/<%= cookbook_meal.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Meal has many recipes -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Recipes
+      </li>
+
+      <% @meal.recipes.each do |recipe| %>
+        <li class="list-group-item">
+          <a href="/recipes/<%= recipe.id %>">
+            <%= recipe.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/recipes/<%= recipe.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/recipes/<%= recipe.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_recipe/<%= recipe.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Meal has many cookbooks -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Cookbooks
+      </li>
+
+      <% @meal.cookbooks.each do |cookbook| %>
+        <li class="list-group-item">
+          <a href="/cookbooks/<%= cookbook.id %>">
+            <%= cookbook.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/cookbooks/<%= cookbook.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/cookbooks/<%= cookbook.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_cookbook/<%= cookbook.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

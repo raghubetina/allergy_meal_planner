@@ -23,3 +23,127 @@
     </div>
   </div>
 </div>
+
+<!-- A Sensitivy has many user_sensitivies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        User Sensitivies
+      </li>
+
+      <% @sensitivy.user_sensitivies.each do |user_sensitivy| %>
+        <li class="list-group-item">
+          <a href="/user_sensitivies/<%= user_sensitivy.id %>">
+            <%= user_sensitivy.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/user_sensitivies/<%= user_sensitivy.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/user_sensitivies/<%= user_sensitivy.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user_sensitivy/<%= user_sensitivy.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Sensitivy has many ingredient_sensitivities -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Ingredient Sensitivities
+      </li>
+
+      <% @sensitivy.ingredient_sensitivities.each do |ingredient_sensitivity| %>
+        <li class="list-group-item">
+          <a href="/ingredient_sensitivities/<%= ingredient_sensitivity.id %>">
+            <%= ingredient_sensitivity.ingredient_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/ingredient_sensitivities/<%= ingredient_sensitivity.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/ingredient_sensitivities/<%= ingredient_sensitivity.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_ingredient_sensitivity/<%= ingredient_sensitivity.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Sensitivy has many ingredients -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Ingredients
+      </li>
+
+      <% @sensitivy.ingredients.each do |ingredient| %>
+        <li class="list-group-item">
+          <a href="/ingredients/<%= ingredient.id %>">
+            <%= ingredient.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/ingredients/<%= ingredient.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/ingredients/<%= ingredient.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_ingredient/<%= ingredient.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A Sensitivy has many users -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Users
+      </li>
+
+      <% @sensitivy.users.each do |user| %>
+        <li class="list-group-item">
+          <a href="/users/<%= user.id %>">
+            <%= user.email %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/users/<%= user.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/users/<%= user.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user/<%= user.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

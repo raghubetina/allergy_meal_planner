@@ -20,3 +20,65 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many user_sensitivies -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        User Sensitivies
+      </li>
+
+      <% @user.user_sensitivies.each do |user_sensitivy| %>
+        <li class="list-group-item">
+          <a href="/user_sensitivies/<%= user_sensitivy.id %>">
+            <%= user_sensitivy.user_id %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/user_sensitivies/<%= user_sensitivy.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/user_sensitivies/<%= user_sensitivy.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_user_sensitivy/<%= user_sensitivy.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many sensitivities -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Sensitivities
+      </li>
+
+      <% @user.sensitivities.each do |sensitivy| %>
+        <li class="list-group-item">
+          <a href="/sensitivies/<%= sensitivy.id %>">
+            <%= sensitivy.name %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/sensitivies/<%= sensitivy.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/sensitivies/<%= sensitivy.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_sensitivy/<%= sensitivy.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
