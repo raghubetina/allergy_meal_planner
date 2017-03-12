@@ -33,7 +33,7 @@
           Sensitivity
         </label>
 
-        <input type="text" id="sensitivity_id" name="sensitivity_id" placeholder="Sensitivity" class="form-control" value="<%= @ingredient_sensitivity.sensitivity_id %>">
+        <%= select_tag(:sensitivity_id, options_from_collection_for_select(Sensitivy.all, :id, :name, @ingredient_sensitivity.sensitivity_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-warning">
