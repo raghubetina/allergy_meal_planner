@@ -1,6 +1,7 @@
 class IngredientSensitivitiesController < ApplicationController
   def index
-    @ingredient_sensitivities = IngredientSensitivity.page(params[:page]).per(10)
+    @q = IngredientSensitivity.ransack(params[:q])
+    @ingredient_sensitivities = @q.result(:distinct => true).includes(:ingredient, :sensitivity).page(params[:page]).per(10)
 
     render("ingredient_sensitivities/index.html.erb")
   end

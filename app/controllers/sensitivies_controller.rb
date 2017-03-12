@@ -1,6 +1,7 @@
 class SensitiviesController < ApplicationController
   def index
-    @sensitivies = Sensitivy.page(params[:page]).per(10)
+    @q = Sensitivy.ransack(params[:q])
+    @sensitivies = @q.result(:distinct => true).includes(:user_sensitivies, :ingredient_sensitivities, :ingredients, :users).page(params[:page]).per(10)
 
     render("sensitivies/index.html.erb")
   end

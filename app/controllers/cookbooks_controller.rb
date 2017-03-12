@@ -1,6 +1,7 @@
 class CookbooksController < ApplicationController
   def index
-    @cookbooks = Cookbook.page(params[:page]).per(10)
+    @q = Cookbook.ransack(params[:q])
+    @cookbooks = @q.result(:distinct => true).includes(:user, :cookbook_meals, :meals).page(params[:page]).per(10)
 
     render("cookbooks/index.html.erb")
   end

@@ -10,7 +10,8 @@ class UserSensitiviesController < ApplicationController
   end
 
   def index
-    @user_sensitivies = current_user.user_sensitivies.page(params[:page]).per(10)
+    @q = current_user.user_sensitivies.ransack(params[:q])
+      @user_sensitivies = @q.result(:distinct => true).includes(:sensitivity, :user, :cookbooks).page(params[:page]).per(10)
 
     render("user_sensitivies/index.html.erb")
   end
