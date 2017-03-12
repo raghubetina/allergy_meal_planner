@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the User_sensitivy resource:
+  # CREATE
+  get "/user_sensitivies/new", :controller => "user_sensitivies", :action => "new"
+  post "/create_user_sensitivy", :controller => "user_sensitivies", :action => "create"
+
+  # READ
+  get "/user_sensitivies", :controller => "user_sensitivies", :action => "index"
+  get "/user_sensitivies/:id", :controller => "user_sensitivies", :action => "show"
+
+  # UPDATE
+  get "/user_sensitivies/:id/edit", :controller => "user_sensitivies", :action => "edit"
+  post "/update_user_sensitivy/:id", :controller => "user_sensitivies", :action => "update"
+
+  # DELETE
+  get "/delete_user_sensitivy/:id", :controller => "user_sensitivies", :action => "destroy"
+  #------------------------------
+
   # Routes for the Recipe_ingredient resource:
   # CREATE
   get "/recipe_ingredients/new", :controller => "recipe_ingredients", :action => "new"
