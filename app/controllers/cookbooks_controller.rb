@@ -1,6 +1,6 @@
 class CookbooksController < ApplicationController
   def index
-    @cookbooks = Cookbook.all
+    @cookbooks = Cookbook.page(params[:page]).per(10)
 
     render("cookbooks/index.html.erb")
   end

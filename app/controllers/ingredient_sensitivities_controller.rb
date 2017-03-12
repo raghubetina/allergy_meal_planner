@@ -1,6 +1,6 @@
 class IngredientSensitivitiesController < ApplicationController
   def index
-    @ingredient_sensitivities = IngredientSensitivity.all
+    @ingredient_sensitivities = IngredientSensitivity.page(params[:page]).per(10)
 
     render("ingredient_sensitivities/index.html.erb")
   end

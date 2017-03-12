@@ -1,6 +1,6 @@
 class SensitiviesController < ApplicationController
   def index
-    @sensitivies = Sensitivy.all
+    @sensitivies = Sensitivy.page(params[:page]).per(10)
 
     render("sensitivies/index.html.erb")
   end
