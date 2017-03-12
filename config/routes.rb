@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Ingredient_sensitivity resource:
+  # CREATE
+  get "/ingredient_sensitivities/new", :controller => "ingredient_sensitivities", :action => "new"
+  post "/create_ingredient_sensitivity", :controller => "ingredient_sensitivities", :action => "create"
+
+  # READ
+  get "/ingredient_sensitivities", :controller => "ingredient_sensitivities", :action => "index"
+  get "/ingredient_sensitivities/:id", :controller => "ingredient_sensitivities", :action => "show"
+
+  # UPDATE
+  get "/ingredient_sensitivities/:id/edit", :controller => "ingredient_sensitivities", :action => "edit"
+  post "/update_ingredient_sensitivity/:id", :controller => "ingredient_sensitivities", :action => "update"
+
+  # DELETE
+  get "/delete_ingredient_sensitivity/:id", :controller => "ingredient_sensitivities", :action => "destroy"
+  #------------------------------
+
   # Routes for the User_sensitivy resource:
   # CREATE
   get "/user_sensitivies/new", :controller => "user_sensitivies", :action => "new"

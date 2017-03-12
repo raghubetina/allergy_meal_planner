@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Ingredient sensitivities
+    <a href="/ingredient_sensitivities/new" class="btn btn-lg btn-success">New Ingredient sensitivity</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Ingredient</th>
+        <th>Sensitivity</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @ingredient_sensitivities.each do |ingredient_sensitivity| %>
+      <tr>
+        <td><%= ingredient_sensitivity.ingredient_id %></td>
+        <td><%= ingredient_sensitivity.sensitivity_id %></td>
+        <td>
+          <a href="/ingredient_sensitivities/<%= ingredient_sensitivity.id %>" class="btn btn-primary">Show</a>
+          <a href="/ingredient_sensitivities/<%= ingredient_sensitivity.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_ingredient_sensitivity/<%= ingredient_sensitivity.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
