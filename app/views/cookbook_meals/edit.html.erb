@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @cookbook_meal.errors.any? %>
+  <% @cookbook_meal.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Cookbook Meal #<%= @cookbook_meal.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_cookbook_meal/<%= @cookbook_meal.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for cookbook_id -->
+      <div class="form-group">
+        <label for="cookbook_id" class="control-label">
+          Cookbook
+        </label>
+
+        <input type="text" id="cookbook_id" name="cookbook_id" placeholder="Cookbook" class="form-control" value="<%= @cookbook_meal.cookbook_id %>">
+      </div>
+
+      <!-- Label and input for meal_id -->
+      <div class="form-group">
+        <label for="meal_id" class="control-label">
+          Meal
+        </label>
+
+        <input type="text" id="meal_id" name="meal_id" placeholder="Meal" class="form-control" value="<%= @cookbook_meal.meal_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Cookbook Meal
+      </button>
+      or
+      <a href="/cookbook_meals/<%= @cookbook_meal.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
