@@ -16,7 +16,7 @@
 
       <% @user_sensitivies.each do |user_sensitivy| %>
       <tr>
-        <td><%= user_sensitivy.user_id %></td>
+        <td><%= user_sensitivy.user.email %></td>
         <td><%= user_sensitivy.sensitivity_id %></td>
         <td>
           <a href="/user_sensitivies/<%= user_sensitivy.id %>" class="btn btn-primary">Show</a>
