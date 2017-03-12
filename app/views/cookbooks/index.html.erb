@@ -16,7 +16,7 @@
 
       <% @cookbooks.each do |cookbook| %>
       <tr>
-        <td><%= cookbook.user_id %></td>
+        <td><%= cookbook.user.user_id %></td>
         <td><%= cookbook.name %></td>
         <td>
           <a href="/cookbooks/<%= cookbook.id %>" class="btn btn-primary">Show</a>
