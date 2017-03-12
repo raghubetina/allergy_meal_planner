@@ -9,6 +9,10 @@ class Ingredient < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :sensitivities,
+             :through => :ingredient_sensitivities,
+             :source => :sensitivity
+
   has_many   :recipes,
              :through => :recipe_ingredients,
              :source => :recipe
