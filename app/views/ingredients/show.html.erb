@@ -51,6 +51,38 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_recipe_ingredient" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for recipe_id -->
+      <div class="form-group">
+        <label for="recipe_id" class="control-label">
+          Recipe
+        </label>
+
+        <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for ingredient_id -->
+      <input type="hidden" name="ingredient_id" value="<%= @ingredient.id %>">
+
+      <!-- Label and input for measurement -->
+      <div class="form-group">
+        <label for="measurement" class="control-label">
+          Measurement
+        </label>
+
+        <input type="text" id="measurement" name="measurement" placeholder="Measurement" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Recipe Ingredient
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -82,6 +114,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_ingredient_sensitivity" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for ingredient_id -->
+      <input type="hidden" name="ingredient_id" value="<%= @ingredient.id %>">
+
+      <!-- Label and input for sensitivity_id -->
+      <div class="form-group">
+        <label for="sensitivity_id" class="control-label">
+          Sensitivity
+        </label>
+
+        <%= select_tag(:sensitivity_id, options_from_collection_for_select(Sensitivy.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Ingredient Sensitivity
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

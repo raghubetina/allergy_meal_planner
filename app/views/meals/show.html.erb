@@ -51,6 +51,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_meal_recipe" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for meal_id -->
+      <input type="hidden" name="meal_id" value="<%= @meal.id %>">
+
+      <!-- Label and input for recipe_id -->
+      <div class="form-group">
+        <label for="recipe_id" class="control-label">
+          Recipe
+        </label>
+
+        <%= select_tag(:recipe_id, options_from_collection_for_select(Recipe.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Meal Recipe
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
@@ -82,6 +105,29 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_cookbook_meal" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for cookbook_id -->
+      <div class="form-group">
+        <label for="cookbook_id" class="control-label">
+          Cookbook
+        </label>
+
+        <%= select_tag(:cookbook_id, options_from_collection_for_select(Cookbook.all, :id, :name), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for meal_id -->
+      <input type="hidden" name="meal_id" value="<%= @meal.id %>">
+
+      <button class="btn btn-block btn-success">
+        Create Cookbook Meal
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>

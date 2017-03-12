@@ -6,6 +6,7 @@ class CookbooksController < ApplicationController
   end
 
   def show
+    @cookbook_meal = CookbookMeal.new
     @cookbook = Cookbook.find(params[:id])
 
     render("cookbooks/show.html.erb")

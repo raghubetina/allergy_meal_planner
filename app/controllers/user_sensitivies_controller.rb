@@ -16,6 +16,7 @@ class UserSensitiviesController < ApplicationController
   end
 
   def show
+    @cookbook = Cookbook.new
     @user_sensitivy = UserSensitivy.find(params[:id])
 
     render("user_sensitivies/show.html.erb")

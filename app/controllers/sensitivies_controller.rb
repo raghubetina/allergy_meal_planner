@@ -6,6 +6,8 @@ class SensitiviesController < ApplicationController
   end
 
   def show
+    @ingredient_sensitivity = IngredientSensitivity.new
+    @user_sensitivy = UserSensitivy.new
     @sensitivy = Sensitivy.find(params[:id])
 
     render("sensitivies/show.html.erb")

@@ -6,6 +6,8 @@ class IngredientsController < ApplicationController
   end
 
   def show
+    @ingredient_sensitivity = IngredientSensitivity.new
+    @recipe_ingredient = RecipeIngredient.new
     @ingredient = Ingredient.find(params[:id])
 
     render("ingredients/show.html.erb")
