@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Cookbook resource:
+  # CREATE
+  get "/cookbooks/new", :controller => "cookbooks", :action => "new"
+  post "/create_cookbook", :controller => "cookbooks", :action => "create"
+
+  # READ
+  get "/cookbooks", :controller => "cookbooks", :action => "index"
+  get "/cookbooks/:id", :controller => "cookbooks", :action => "show"
+
+  # UPDATE
+  get "/cookbooks/:id/edit", :controller => "cookbooks", :action => "edit"
+  post "/update_cookbook/:id", :controller => "cookbooks", :action => "update"
+
+  # DELETE
+  get "/delete_cookbook/:id", :controller => "cookbooks", :action => "destroy"
+  #------------------------------
+
   # Routes for the Ingredient_sensitivity resource:
   # CREATE
   get "/ingredient_sensitivities/new", :controller => "ingredient_sensitivities", :action => "new"
