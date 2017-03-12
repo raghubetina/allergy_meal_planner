@@ -16,8 +16,20 @@
 
       <% @meal_recipes.each do |meal_recipe| %>
       <tr>
-        <td><%= meal_recipe.meal.name %></td>
-        <td><%= meal_recipe.recipe.name %></td>
+        <td>
+          <% if meal_recipe.meal.present? %>
+            <a href="/meals/<%= meal_recipe.meal.id %>">
+              <%= meal_recipe.meal.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if meal_recipe.recipe.present? %>
+            <a href="/recipes/<%= meal_recipe.recipe.id %>">
+              <%= meal_recipe.recipe.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/meal_recipes/<%= meal_recipe.id %>" class="btn btn-primary">Show</a>
           <a href="/meal_recipes/<%= meal_recipe.id %>/edit" class="btn btn-warning">Edit</a>

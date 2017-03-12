@@ -16,7 +16,13 @@
 
       <% @cookbooks.each do |cookbook| %>
       <tr>
-        <td><%= cookbook.user.user_id %></td>
+        <td>
+          <% if cookbook.user.present? %>
+            <a href="/user_sensitivies/<%= cookbook.user.id %>">
+              <%= cookbook.user.user_id %>
+            </a>
+          <% end %>
+        </td>
         <td><%= cookbook.name %></td>
         <td>
           <a href="/cookbooks/<%= cookbook.id %>" class="btn btn-primary">Show</a>

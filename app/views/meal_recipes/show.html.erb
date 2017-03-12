@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Meal</dt>
-      <dd><%= @meal_recipe.meal_id %></dd>
+      <dd>
+        <% if @meal_recipe.meal.present? %>
+          <a href="/meals/<%= @meal_recipe.meal_id %>">
+            <%= @meal_recipe.meal.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Recipe</dt>
-      <dd><%= @meal_recipe.recipe_id %></dd>
+      <dd>
+        <% if @meal_recipe.recipe.present? %>
+          <a href="/recipes/<%= @meal_recipe.recipe_id %>">
+            <%= @meal_recipe.recipe.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

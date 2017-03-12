@@ -6,10 +6,22 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Ingredient</dt>
-      <dd><%= @ingredient_sensitivity.ingredient_id %></dd>
+      <dd>
+        <% if @ingredient_sensitivity.ingredient.present? %>
+          <a href="/ingredients/<%= @ingredient_sensitivity.ingredient_id %>">
+            <%= @ingredient_sensitivity.ingredient.name %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Sensitivity</dt>
-      <dd><%= @ingredient_sensitivity.sensitivity_id %></dd>
+      <dd>
+        <% if @ingredient_sensitivity.sensitivity.present? %>
+          <a href="/sensitivies/<%= @ingredient_sensitivity.sensitivity_id %>">
+            <%= @ingredient_sensitivity.sensitivity.name %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

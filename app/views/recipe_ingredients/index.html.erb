@@ -17,8 +17,20 @@
 
       <% @recipe_ingredients.each do |recipe_ingredient| %>
       <tr>
-        <td><%= recipe_ingredient.recipe.name %></td>
-        <td><%= recipe_ingredient.ingredient.name %></td>
+        <td>
+          <% if recipe_ingredient.recipe.present? %>
+            <a href="/recipes/<%= recipe_ingredient.recipe.id %>">
+              <%= recipe_ingredient.recipe.name %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if recipe_ingredient.ingredient.present? %>
+            <a href="/ingredients/<%= recipe_ingredient.ingredient.id %>">
+              <%= recipe_ingredient.ingredient.name %>
+            </a>
+          <% end %>
+        </td>
         <td><%= recipe_ingredient.measurement %></td>
         <td>
           <a href="/recipe_ingredients/<%= recipe_ingredient.id %>" class="btn btn-primary">Show</a>

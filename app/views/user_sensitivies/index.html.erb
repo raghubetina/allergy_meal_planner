@@ -16,8 +16,20 @@
 
       <% @user_sensitivies.each do |user_sensitivy| %>
       <tr>
-        <td><%= user_sensitivy.user.email %></td>
-        <td><%= user_sensitivy.sensitivity.name %></td>
+        <td>
+          <% if user_sensitivy.user.present? %>
+            <a href="/users/<%= user_sensitivy.user.id %>">
+              <%= user_sensitivy.user.email %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if user_sensitivy.sensitivity.present? %>
+            <a href="/sensitivies/<%= user_sensitivy.sensitivity.id %>">
+              <%= user_sensitivy.sensitivity.name %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/user_sensitivies/<%= user_sensitivy.id %>" class="btn btn-primary">Show</a>
           

@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>User</dt>
-      <dd><%= @cookbook.user_id %></dd>
+      <dd>
+        <% if @cookbook.user.present? %>
+          <a href="/user_sensitivies/<%= @cookbook.user_id %>">
+            <%= @cookbook.user.user_id %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Name</dt>
       <dd><%= @cookbook.name %></dd>
