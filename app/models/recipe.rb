@@ -9,6 +9,10 @@ class Recipe < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :meals,
+             :through => :meal_recipes,
+             :source => :meal
+
   # Validations
 
   validates :name, :presence => true
