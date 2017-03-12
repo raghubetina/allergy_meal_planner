@@ -9,6 +9,10 @@ class Meal < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :cookbooks,
+             :through => :cookbook_meals,
+             :source => :cookbook
+
   has_many   :recipes,
              :through => :meal_recipes,
              :source => :recipe

@@ -9,6 +9,10 @@ class Cookbook < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :meals,
+             :through => :cookbook_meals,
+             :source => :meal
+
   # Validations
 
 end
