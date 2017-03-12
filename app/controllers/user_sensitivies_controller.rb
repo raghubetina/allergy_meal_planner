@@ -1,5 +1,5 @@
 class UserSensitiviesController < ApplicationController
-  before_action :current_user_must_be_user_sensitivy_user, :only => [:edit, :update, :destroy]
+  before_action :current_user_must_be_user_sensitivy_user, :only => [:show, :edit, :update, :destroy]
 
   def current_user_must_be_user_sensitivy_user
     user_sensitivy = UserSensitivy.find(params[:id])
