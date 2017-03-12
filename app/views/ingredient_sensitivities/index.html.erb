@@ -16,7 +16,7 @@
 
       <% @ingredient_sensitivities.each do |ingredient_sensitivity| %>
       <tr>
-        <td><%= ingredient_sensitivity.ingredient_id %></td>
+        <td><%= ingredient_sensitivity.ingredient.name %></td>
         <td><%= ingredient_sensitivity.sensitivity_id %></td>
         <td>
           <a href="/ingredient_sensitivities/<%= ingredient_sensitivity.id %>" class="btn btn-primary">Show</a>
